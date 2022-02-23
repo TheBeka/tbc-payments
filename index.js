@@ -1,5 +1,2 @@
-function tbcPayments() {
-
-}
-
-module.exports.tbcPayments = tbcPayments;
+const TBC = require('./TBC').TBC
+module.exports = { TBC }

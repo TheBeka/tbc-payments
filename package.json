@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/TheBeka/tbc-payments/issues"
   },
-  "homepage": "https://github.com/TheBeka/tbc-payments/blob/master/README.md"
+  "homepage": "https://github.com/TheBeka/tbc-payments/blob/master/README.md",
+  "dependencies": {
+    "node-fetch": "^3.2.0"
+  }
 }
