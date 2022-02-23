@@ -1,0 +1,25 @@
+{
+  "name": "tbc-payments",
+  "version": "0.0.1",
+  "description": "TBC bank's web payments simplified",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TheBeka/tbc-payments.git"
+  },
+  "keywords": [
+    "tbc",
+    "bank",
+    "checkout",
+    "api"
+  ],
+  "author": "Beka Darjania",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TheBeka/tbc-payments/issues"
+  },
+  "homepage": "https://github.com/TheBeka/tbc-payments/blob/master/README.md"
+}
