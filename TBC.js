@@ -17,12 +17,12 @@ class TBC {
         this.token_type = null;
     }
 
-
     /**
      * Gets access token from TBC api and stores it to be used for next payments
+     * Reference: https://developers.tbcbank.ge/reference/checkout-get-access-token-api
      * @return {boolean} auth result
      */
-    async auth() {
+    async getAccessToken() {
         const options = {
             method: 'POST',
             headers: {
@@ -42,9 +42,6 @@ class TBC {
         if (this.access_token && this.token_type) return true;
         return false;
     }
-
-
-
 
     /**
      * Creates web payment and gives back link for user.
@@ -87,9 +84,9 @@ class TBC {
         return json;
     }
 
-
     /**
      * Refunds payment with ID
+     * Reference: https://developers.tbcbank.ge/reference/checkout-cancel-checkout-payment-api
      * @param {string} payId payment id
      */
     async cancelWebPayment(payId) {
@@ -107,12 +104,12 @@ class TBC {
         return json;
     }
 
-
     /**
      * retrieve details details of payment with ID
+     * Reference: https://developers.tbcbank.ge/reference/checkout-get-checkout-payment-details-api
      * @param {string} payId id of the payment
      */
-    async getWebPaymentDetails(payId) {
+    async getCheckoutPaymentDetails(payId) {
         const options = {
             method: 'GET',
             headers: {
@@ -129,6 +126,7 @@ class TBC {
 
     /**
      * performs payment with saved card. using stored auth token
+     * Reference: https://developers.tbcbank.ge/reference/execute-recurring-payment-1
      * @param {string} recId users card Id provided by tbc
      * @param {string | number} amount amount of GEL
      * @param {boolean} refundOnSuccess refund automatically when transaction goes through, cancellation must be enabled by TBC
