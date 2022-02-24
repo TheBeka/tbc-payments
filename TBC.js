@@ -5,7 +5,7 @@ const fetch = require('node-fetch');
 const BASE_URL = 'https://api.tbcbank.ge'
 
 /**
- * Class that will handle Payment APIs. TBC for now
+ * Class that will handle Payments
  */
 class TBC {
     /**
@@ -88,6 +88,7 @@ class TBC {
      * Refunds payment with ID
      * Reference: https://developers.tbcbank.ge/reference/checkout-cancel-checkout-payment-api
      * @param {string} payId payment id
+     * @return {object}
      */
     async cancelWebPayment(payId) {
         const options = {
@@ -108,6 +109,7 @@ class TBC {
      * retrieve details details of payment with ID
      * Reference: https://developers.tbcbank.ge/reference/checkout-get-checkout-payment-details-api
      * @param {string} payId id of the payment
+     * @return {object}
      */
     async getCheckoutPaymentDetails(payId) {
         const options = {
@@ -130,7 +132,8 @@ class TBC {
      * @param {string} recId users card Id provided by tbc
      * @param {string | number} amount amount of GEL
      * @param {boolean} refundOnSuccess refund automatically when transaction goes through, cancellation must be enabled by TBC
-     */
+     * @return {object} 
+    */
     async executeRecurringPayment(recId, amount, refundOnSuccess = false) {
         const options = {
             method: 'POST',
